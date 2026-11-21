@@ -57,6 +57,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/vietanhdev/ThinkUtils";
     license = lib.licenses.lgpl3Plus;
     mainProgram = "thinkutils";
-    platforms = [ "x86_64-linux" "aarch64-linux" ];
+    platforms = [ "x86_64-linux" ];
   };
 })
