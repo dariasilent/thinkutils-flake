@@ -29,6 +29,11 @@ rustPlatform.buildRustPackage (finalAttrs: {
     substituteInPlace src-tauri/src/fan_control.rs \
       --replace-fail '"/usr/lib/thinkutils/thinkutils-fan-control"' \
                      "\"$out/libexec/thinkutils/thinkutils-fan-control\""
+    substituteInPlace src-tauri/src/fan_curve.rs \
+      --replace-fail 'let thermal_zones = [' 'let thermal_zones: [&str; 0] = [' \
+      --replace-fail '"/sys/class/thermal/thermal_zone0/temp",' "" \
+      --replace-fail '"/sys/class/thermal/thermal_zone1/temp",' "" \
+      --replace-fail '"/sys/class/thermal/thermal_zone2/temp",' ""
   '';
 
   postInstall = ''
