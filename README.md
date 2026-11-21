@@ -47,3 +47,5 @@ programs.thinkutils.sysfsPermissions = true;
 
 ## side note
 i added a patch that makes it so the fan speed utility is forced to read the temperatures through hwmon because my device's first thermal_zone is a placeholder that never changes value.
+
+this has no negative side effects on devices where the feature works without the patch.
