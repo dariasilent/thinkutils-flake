@@ -40,3 +40,10 @@ programs.thinkutils.enable = true;
 programs.thinkutils.sysfsPermissions = true;
 ```
 
+
+
+
+
+
+## side note
+i added a patch that makes it so the fan speed utility is forced to read the temperatures through hwmon because my device's first thermal_zone is a placeholder that never changes value.
