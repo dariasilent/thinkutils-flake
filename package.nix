@@ -1,4 +1,4 @@
-{ lib, rustPlatform, fetchFromGitHub, cargo-tauri, pkg-config, wrapGAppsHook4, bash
+{ lib, rustPlatform, fetchFromGitHub, cargo-tauri, pkg-config, wrapGAppsHook4, bash, lm_sensors
 , webkitgtk_4_1, gtk3, libsoup_3, openssl, glib-networking, librsvg, libayatana-appindicator
 }:
 
