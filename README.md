@@ -3,7 +3,7 @@
 
 I saw that there is no flake or official package for the thinkutils program and decided to make one on my own.
 
-Add `github:dariasilent/thinkutils-flake` as a flake input, add `thinkutils.nixosModules.default` as a module,
+Add `github:dariasilent/thinkutils-nix` as a flake input, add `thinkutils.nixosModules.default` as a module,
 and install by adding `programs.thinkutils.enable = true;` into your nix configuration.
 
 (Optionally) you can also add `programs.thinkutils.sysfsPermissions = true;` to make the programs permissions persistent.
@@ -17,7 +17,7 @@ flake.nix:
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     thinkutils = {
-      url = "github:dariasilent/thinkutils-flake";
+      url = "github:dariasilent/thinkutils-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
