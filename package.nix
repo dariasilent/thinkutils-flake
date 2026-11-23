@@ -34,6 +34,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
       --replace-fail '"/sys/class/thermal/thermal_zone0/temp",' "" \
       --replace-fail '"/sys/class/thermal/thermal_zone1/temp",' "" \
       --replace-fail '"/sys/class/thermal/thermal_zone2/temp",' ""
+
+    substituteInPlace src-tauri/src/battery.rs \
+      --replace-fail 'let current = read_f32("current_now");' \
+        'let current = { let c = read_f32("current_now"); let p = read_f32("power_now"); if c > 0.0 { c } else if voltage > 0.0 { p / voltage } else { 0.0 } };'
   '';
 
   postInstall = ''
